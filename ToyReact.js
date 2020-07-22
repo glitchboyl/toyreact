@@ -93,6 +93,10 @@ export class Component {
     const vDom = this.vDom;
     if (this.oldVDom) {
       const isSameNode = (node, _node) => {
+        if(typeof node !== typeof _node) {
+          return false;
+        }
+
         if (node.type !== _node.type) {
           return false;
         }
